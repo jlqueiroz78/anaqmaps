@@ -1,0 +1,345 @@
+/* =============================================
+   COMPONENTES E INTERFACE VISUAL - PADRÃO #2F80ED
+   ============================================= */
+
+/* Inputs do cabeçalho */
+.title-input {
+    background: white;
+    border: 1.5px solid transparent;
+    color: #2c3e50;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 1.8em;
+    width: 60%;
+    max-width: 800px;
+    text-align: center;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.title-input:focus {
+    outline: none;
+    border-color: #2F80ED;
+    box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.25);
+}
+
+.title-input::placeholder {
+    font-size: 1em;
+    color: #94a3b8;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-input {
+    background: white;
+    color: #2c3e50;
+    padding: 10px 15px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 6px;
+    width: 320px;
+    font-size: 0.95em;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+    border-color: #2F80ED;
+    box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.2);
+}
+
+/* =============================================
+   BOTÕES GERAIS E DE FERRAMENTAS
+   ============================================= */
+.tool-btn {
+    width: 100%;
+    padding: 11px 16px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+    background: #2F80ED;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(47, 128, 237, 0.25);
+}
+
+.tool-btn:hover {
+    background: #1a68d1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(47, 128, 237, 0.35);
+}
+
+.tool-btn:active {
+    background: #1555ab;
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(47, 128, 237, 0.2);
+}
+
+.tool-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.4);
+}
+
+.tool-btn.search {
+    width: auto;
+    min-width: 110px;
+    margin-bottom: 0;
+    padding: 10px 18px;
+}
+
+.tool-btn.active,
+.tool-btn.draw.active {
+    background: #1555ab !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* =============================================
+   PAINÉIS DE OPÇÕES (Rótulos e Impressão)
+   ============================================= */
+.label-options,
+.print-options {
+    background: #f4f8fe;
+    border: 1px solid #c8dcf7;
+    border-left: 4px solid #2F80ED;
+    padding: 16px;
+    border-radius: 6px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(47, 128, 237, 0.1);
+}
+
+.label-options label,
+.print-options label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #2F80ED;
+    font-size: 0.9em;
+}
+
+.label-options input,
+.label-options select,
+.print-options input,
+.print-options select {
+    width: 100%;
+    padding: 9px 12px;
+    margin-bottom: 14px;
+    border: 1.5px solid #c8dcf7;
+    border-radius: 5px;
+    font-size: 0.95em;
+    background: #ffffff;
+    color: #2c3e50;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.label-options input:focus,
+.label-options select:focus,
+.print-options input:focus,
+.print-options select:focus {
+    border-color: #2F80ED;
+    box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.25);
+}
+
+/* =============================================
+   CONTROLES DO MAPA (Leaflet & Draw)
+   ============================================= */
+.leaflet-control-zoom a,
+.leaflet-bar a {
+    background-color: white !important;
+    color: black !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    transition: background-color 0.2s;
+}
+
+.leaflet-control-zoom a:hover,
+.leaflet-bar a:hover {
+    background-color: #f0f7ff !important;
+    color: black !important;
+}
+
+.leaflet-control-scale-line {
+    background: white !important;
+    color: black !important;
+    border: 1px solid #FFFFFF33 !important;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.leaflet-draw-toolbar a {
+    background-color: white !important;
+    color: black !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    transition: background-color 0.2s;    
+}
+
+.leaflet-draw-toolbar a:hover {
+    background-color: #f0f7ff !important;
+}
+
+.leaflet-draw-actions {
+    background: #2F80ED !important;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.leaflet-draw-actions a {
+    background-color: #2F80ED !important;
+    color: #ffffff !important;
+    transition: background-color 0.2s;
+}
+
+.leaflet-draw-actions a:hover {
+    background-color: #1a68d1 !important;
+}
+
+/* =============================================
+   POPUPS PADRONIZADOS (#2F80ED)
+   ============================================= */
+.leaflet-popup-content-wrapper {
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid rgba(47, 128, 237, 0.25);
+    border-top: 4px solid #2F80ED;
+    box-shadow: 0 4px 20px rgba(47, 128, 237, 0.25), 0 2px 8px rgba(0, 0, 0, 0.12);
+    padding: 2px;
+}
+
+.leaflet-popup-tip {
+    background: #ffffff;
+    border-top: 1px solid rgba(47, 128, 237, 0.2);
+}
+
+.leaflet-popup-close-button {
+    color: #2F80ED !important;
+    font-size: 18px !important;
+    padding: 6px 8px !important;
+    transition: all 0.2s ease;
+}
+
+.leaflet-popup-close-button:hover {
+    color: #1a68d1 !important;
+    transform: scale(1.15);
+}
+
+.leaflet-popup-content {
+    min-width: 220px;
+    margin: 14px 16px;
+    line-height: 1.45;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.leaflet-popup-content b,
+.leaflet-popup-content strong {
+    color: #1e293b;
+    font-size: 1.05em;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.leaflet-popup-content small,
+.leaflet-popup-content em {
+    color: #64748b;
+    font-size: 0.85em;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-style: normal;
+}
+
+/* Todos os botões dentro de popups padronizados para #2F80ED */
+.leaflet-popup-content button {
+    width: 100%;
+    background: #2F80ED;
+    color: #ffffff;
+    border: none;
+    padding: 8px 14px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(47, 128, 237, 0.2);
+}
+
+.leaflet-popup-content button:hover {
+    background: #1a68d1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(47, 128, 237, 0.35);
+}
+
+.leaflet-popup-content button:active {
+    background: #1555ab;
+    transform: translateY(0);
+}
+
+/* Popup de Marcadores - Padronização integral para #2F80ED */
+.marker-popup .leaflet-popup-content {
+    min-width: 220px;
+    padding: 6px;
+}
+
+.marker-popup .leaflet-popup-content button,
+.marker-popup .btn-remover,
+.marker-popup .btn-circulo,
+.marker-popup .btn-arrastar {
+    background: #2F80ED !important;
+    color: #ffffff !important;
+    width: 100%;
+    margin: 6px 0;
+    padding: 9px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(47, 128, 237, 0.2);
+}
+
+.marker-popup .leaflet-popup-content button:hover,
+.marker-popup .btn-remover:hover,
+.marker-popup .btn-circulo:hover,
+.marker-popup .btn-arrastar:hover {
+    background: #1a68d1 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(47, 128, 237, 0.35);
+}
+
+.marker-popup .leaflet-popup-content button:active,
+.marker-popup .btn-remover:active,
+.marker-popup .btn-circulo:active,
+.marker-popup .btn-arrastar:active {
+    background: #1555ab !important;
+    transform: translateY(0);
+}
+
+/* Círculo de raio */
+.circle-radius {
+    fillColor: #2F80ED;
+    fillOpacity: 0.15;
+    color: #2F80ED;
+    weight: 2;
+    dashArray: '5, 5';
+}

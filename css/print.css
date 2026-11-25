@@ -1,0 +1,272 @@
+/* Moldura A4 na tela (Paisagem e Retrato) */
+.print-frame {
+    position: absolute;
+    border: 2px dashed #2F80ED;
+    background-color: rgba(47, 128, 237, 0.08);
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.35);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+/* Formato A4 Paisagem: 297mm x 210mm */
+.print-frame.a4-landscape {
+    width: 297mm;
+    height: 210mm;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Formato A4 Retrato: 210mm x 297mm */
+.print-frame.a4-portrait {
+    width: 210mm;
+    height: 297mm;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.print-frame-label {
+    position: absolute;
+    background: #2F80ED;
+    color: white;
+    padding: 3px 9px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 1001;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease;
+}
+
+.print-frame-controls {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(47, 128, 237, 0.25);
+    border-top: 4px solid #2F80ED;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    display: none;
+    min-width: 175px;
+}
+
+.print-frame-controls-title {
+    font-size: 0.8em;
+    font-weight: 700;
+    color: #2F80ED;
+    margin-bottom: 8px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.frame-toggle {
+    width: 100%;
+    background: #2F80ED;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 500;
+    margin-bottom: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(47, 128, 237, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.frame-toggle:hover {
+    background: #1a68d1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(47, 128, 237, 0.35);
+}
+
+.frame-toggle:active {
+    background: #1555ab;
+    transform: translateY(0);
+}
+
+/* Cabeçalho de impressão (oculto na tela) */
+.header-print {
+    display: none;
+}
+
+.print-logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    border-bottom: 2px solid #a9a9a9;
+    margin-bottom: 10px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.print-logo {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+#print-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0;
+    text-align: center;
+    flex: 1;
+}
+
+/* Regras de impressão */
+@media print {
+    .tools-panel,
+    .print-frame,
+    .print-frame-controls,
+    .leaflet-control-container,
+    .search-box,
+    .logo {
+        display: none !important;
+    }
+
+    .header-print {
+        display: block !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10000;
+        background: white !important;
+        padding: 10px 0 !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        page-break-inside: avoid;
+    }
+
+    .container {
+        margin-top: 90px !important;
+        height: calc(100vh - 90px) !important;
+        overflow: visible !important;
+    }
+
+    .header {
+        display: none !important;
+    }
+
+    .print-logo-title {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 10px 20px !important;
+        page-break-inside: avoid;
+    }
+
+    .print-logo {
+        display: block !important;
+        height: 50px !important;
+        width: auto !important;
+    }
+
+    #print-title {
+        display: block !important;
+        font-size: 32px !important;
+        font-weight: bold !important;
+        color: #2c3e50 !important;
+        text-align: center !important;
+        margin: 0 !important;
+    }
+
+    .main-content {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: calc(100vh - 90px) !important;
+        display: block !important;
+    }
+
+    .map-container {
+        height: calc(100vh - 90px) !important;
+        width: 100% !important;
+        position: relative !important;
+    }
+
+    #map {
+        height: 100% !important;
+        width: 100% !important;
+        border: 1px solid #ccc !important;
+        page-break-inside: avoid;
+    }
+
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    body {
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        height: auto !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .leaflet-interactive {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .title-input {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #ccc !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+@page {
+    margin: 15mm;
+    size: A4;
+}
+
+@media print and (orientation: portrait) {
+    .print-logo-title {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .print-logo {
+        height: 45px !important;
+    }
+
+    #print-title {
+        font-size: 20px !important;
+    }
+}
+
+@media print and (orientation: landscape) {
+    .print-logo-title {
+        gap: 25px;
+    }
+
+    .print-logo {
+        height: 55px !important;
+    }
+
+    #print-title {
+        font-size: 34px !important;
+    }
+}

@@ -1,0 +1,240 @@
+/* =============================================
+   ESTILOS DE POLÍGONOS E CAMADAS - PADRÃO #2F80ED
+   ============================================= */
+
+/* Polígonos importados (transparentes) */
+.polygon-imported {
+    fillColor: transparent !important;
+    fillOpacity: 0 !important;
+    color: transparent !important;
+    weight: 0 !important;
+}
+
+/* Polígonos selecionados */
+.polygon-selected {
+    fillColor: #2F80ED !important;
+    fillOpacity: 0.3 !important;
+    color: #2F80ED !important;
+    weight: 2 !important;
+}
+
+/* Controle de camadas (KML) */
+.layer-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    background: #f8fafc;
+    border-radius: 5px;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #2F80ED;
+    transition: background 0.2s;
+}
+
+.layer-control:hover {
+    background: #f1f5f9;
+}
+
+.layer-name {
+    flex: 1;
+    font-size: 0.9em;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.layer-toggle {
+    background: #2F80ED;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.layer-toggle:hover {
+    background: #1a68d1;
+}
+
+.layer-toggle.hidden {
+    background: #94bbf5;
+    color: #ffffff;
+}
+
+.layer-remove {
+    background: #2F80ED;
+    color: white;
+    border: none;
+    padding: 5px 9px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    margin-left: 6px;
+    transition: all 0.2s ease;
+}
+
+.layer-remove:hover {
+    background: #1a68d1;
+}
+
+/* Controle de polígonos individuais */
+.polygon-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 10px;
+    margin-bottom: 4px;
+    background: #f8fafc;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid #2F80ED;
+    transition: background 0.2s;
+}
+
+.polygon-control:hover {
+    background: #f1f5f9;
+}
+
+.polygon-control.selected {
+    background: #2F80ED;
+    color: white;
+    border-left-color: #1555ab;
+}
+
+.polygon-control.selected .polygon-name {
+    color: white;
+    font-weight: 600;
+}
+
+.polygon-control.selected .polygon-toggle,
+.polygon-control.selected .polygon-remove {
+    background: white;
+    color: #2F80ED;
+}
+
+.polygon-control.selected .polygon-toggle:hover,
+.polygon-control.selected .polygon-remove:hover {
+    background: #e2e8f0;
+}
+
+.polygon-name {
+    flex: 1;
+    font-size: 0.85em;
+    color: #2c3e50;
+    cursor: pointer;
+}
+
+.polygon-toggle {
+    background: #2F80ED;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75em;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.polygon-toggle:hover {
+    background: #1a68d1;
+}
+
+.polygon-toggle.hidden {
+    background: #94bbf5;
+    color: white;
+}
+
+.polygon-remove {
+    background: #2F80ED;
+    color: white;
+    border: none;
+    padding: 4px 7px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75em;
+    margin-left: 5px;
+    transition: all 0.2s ease;
+}
+
+.polygon-remove:hover {
+    background: #1a68d1;
+}
+
+/* Gerenciador recolhível de polígonos */
+.polygon-manager {
+    margin-top: 10px;
+}
+
+.polygon-manager-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: #2F80ED;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(47, 128, 237, 0.25);
+}
+
+.polygon-manager-header:hover {
+    background: #1a68d1;
+}
+
+.polygon-manager-title {
+    font-weight: 600;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.polygon-manager-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 0.9em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 3px;
+    transition: background 0.2s;
+}
+
+.polygon-manager-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.polygon-manager-content {
+    max-height: 220px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+.polygon-manager-content.collapsed {
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* Contador estilizado no padrão #2F80ED */
+.polygon-count {
+    background: #ffffff;
+    color: #2F80ED;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75em;
+    margin-left: 8px;
+}
